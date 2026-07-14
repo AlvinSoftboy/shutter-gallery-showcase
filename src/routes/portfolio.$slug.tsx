@@ -102,7 +102,7 @@ function ProjectPage() {
 
       {/* Gallery */}
       <section className="mx-auto max-w-[110rem] space-y-8 px-6 pb-24 md:px-10">
-        {project.images.map((src, i) => (
+        {project.images.map((src: string, i: number) => (
           <div
             key={src}
             className={`overflow-hidden bg-surface ${
