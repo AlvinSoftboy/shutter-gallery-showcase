@@ -1,7 +1,4 @@
-import {
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
@@ -19,20 +16,17 @@ import { SiteFooter } from "../components/layout/site-footer";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center px-4">
+    <div className="flex justify-center items-center px-4 min-h-screen">
       <div className="max-w-md text-center">
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent">
-          Error 404
-        </p>
+        <p className="font-mono text-accent text-xs uppercase tracking-[0.3em]">Error 404</p>
         <h1 className="mt-4 font-display text-7xl">Frame not found.</h1>
-        <p className="mt-4 text-sm text-muted-foreground">
-          The image you were looking for is out of focus. Let's take you
-          somewhere sharper.
+        <p className="mt-4 text-muted-foreground text-sm">
+          The image you were looking for is out of focus. Let's take you somewhere sharper.
         </p>
         <div className="mt-8">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-full border border-foreground px-6 py-3 text-xs uppercase tracking-[0.2em] transition-colors hover:bg-foreground hover:text-primary-foreground"
+            className="inline-flex justify-center items-center hover:bg-foreground px-6 py-3 border border-foreground rounded-full hover:text-primary-foreground text-xs uppercase tracking-[0.2em] transition-colors"
           >
             Back to home
           </Link>
@@ -50,25 +44,25 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   }, [error]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center px-4">
+    <div className="flex justify-center items-center px-4 min-h-screen">
       <div className="max-w-md text-center">
         <h1 className="font-display text-4xl">Something didn't develop.</h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="mt-2 text-muted-foreground text-sm">
           The page failed to load. Try again or head home.
         </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-3 mt-6">
           <button
             onClick={() => {
               router.invalidate();
               reset();
             }}
-            className="rounded-full bg-accent px-6 py-3 text-xs uppercase tracking-[0.2em] text-accent-foreground"
+            className="bg-accent px-6 py-3 rounded-full text-xs uppercase tracking-[0.2em] text-accent-foreground"
           >
             Try again
           </button>
           <a
             href="/"
-            className="rounded-full border border-border px-6 py-3 text-xs uppercase tracking-[0.2em]"
+            className="px-6 py-3 border border-border rounded-full text-xs uppercase tracking-[0.2em]"
           >
             Go home
           </a>
@@ -134,7 +128,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-screen flex-col bg-background text-foreground">
+      <div className="flex flex-col bg-background min-h-screen text-foreground">
         <SiteNav />
         <main className="flex-1 pt-20">
           <Outlet />
