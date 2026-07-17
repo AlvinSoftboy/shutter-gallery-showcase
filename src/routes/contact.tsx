@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, Mail, MapPin, Instagram } from "lucide-react";
+import { ArrowRight, Mail, MapPin } from "lucide-react";
+import { InstagramIcon } from "@/components/ui/display/brand-icons";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -26,7 +27,7 @@ function ContactPage() {
       <div>
         <p className="font-mono text-accent text-xs uppercase tracking-[0.3em]">Contact</p>
         <h1 className="mt-6 max-w-[14ch] font-display text-6xl md:text-9xl leading-[0.95]">
-          Say <span className="italic">hello</span>.
+          Hello <span className="italic">There</span>.
         </h1>
         <p className="mt-8 max-w-md text-muted-foreground text-lg">
           For commissions, campaigns, or press — the fastest path is the form. I read every note
@@ -35,23 +36,23 @@ function ContactPage() {
 
         <div className="space-y-4 mt-12 pt-8 border-border border-t">
           <a
-            href="mailto:studio@kaiwinters.co"
+            href="mailto:barnessagala17@gmail.com"
             className="flex items-center gap-3 hover:text-accent"
           >
             <Mail className="w-4 h-4 text-accent" />
-            <span>studio@kaiwinters.co</span>
+            <span>barnessagala17@gmail.com</span>
           </a>
           <a
             href="barnessagala17@gmail.com"
             target="_blank"
             className="flex items-center gap-3 hover:text-accent"
           >
-            <Instagram className="w-4 h-4 text-accent" />
+            <InstagramIcon className="w-4 h-4 text-accent" />
             <span>Barnes Sagala</span>
           </a>
           <p className="flex items-center gap-3 text-muted-foreground">
             <MapPin className="w-4 h-4 text-accent" />
-            <span>Jakarta</span>bar
+            <span>Jakarta</span>
           </p>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Youtube, Twitter } from "lucide-react";
+import { InstagramIcon, YoutubeIcon, XIcon } from "@/components/ui/display/brand-icons";
 
 export function SiteFooter() {
   return (
@@ -67,25 +67,21 @@ export function SiteFooter() {
                   Contact
                 </Link>
               </li>
-              <li>
-                <a href="mailto:studio@kaiwinters.co" className="hover:text-accent">
-                  studio@kaiwinters.co
-                </a>
-              </li>
             </ul>
           </div>
 
           <div>
             <p className="text-muted-foreground text-xs uppercase tracking-[0.2em]">Follow</p>
             <div className="flex items-center gap-4 mt-4">
-              <a href="#" aria-label="Instagram" className="hover:text-accent">
-                <Instagram className="w-5 h-5" />
+              <a
+                href="https://www.instagram.com/barnessagala/"
+                aria-label="Instagram"
+                className="hover:text-accent"
+              >
+                <InstagramIcon className="w-5 h-5" />
               </a>
-              <a href="#" aria-label="YouTube" className="hover:text-accent">
-                <Youtube className="w-5 h-5" />
-              </a>
-              <a href="#" aria-label="Twitter" className="hover:text-accent">
-                <Twitter className="w-5 h-5" />
+              <a href="#" aria-label="X (Twitter)" className="hover:text-accent">
+                <XIcon className="w-5 h-5" />
               </a>
             </div>
           </div>

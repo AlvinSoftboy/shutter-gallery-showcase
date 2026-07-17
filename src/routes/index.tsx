@@ -36,9 +36,9 @@ function HomePage() {
           alt="Winter fjord at blue hour"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-linear-to-b from-background/40 via-background/30 to-background" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/20 to-black/70" />
 
-        <div className="z-10 relative flex flex-col justify-end mx-auto px-6 md:px-10 pb-16 md:pb-24 max-w-[110rem] h-full">
+        <div className="z-10 relative flex flex-col justify-end mx-auto px-6 md:px-10 pb-16 md:pb-24 max-w-[110rem] h-full text-white">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ function HomePage() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1 }}
-            className="mt-6 max-w-[18ch] font-display text-[13vw] md:text-[9vw] leading-[0.95] tracking-tight"
+            className="mt-6 max-w-[18ch] font-display text-[13vw] md:text-[9vw] leading-[0.95] tracking-tight text-white"
           >
             Light is a <span className="text-accent italic">language</span>.
           </motion.h1>
@@ -61,21 +61,21 @@ function HomePage() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex md:flex-row flex-col justify-between items-start md:items-end gap-6 mt-8"
           >
-            <p className="max-w-md text-muted-foreground text-base md:text-lg">
+            <p className="max-w-md text-white/80 text-base md:text-lg">
               I'm Kai — a photographer and director making cinematic images for brands, editorials,
               and the people brave enough to stand in front of a lens.
             </p>
             <div className="flex items-center gap-3">
               <Link
                 to="/portfolio"
-                className="group inline-flex items-center gap-2 bg-foreground px-6 py-3 rounded-full text-primary-foreground text-xs uppercase tracking-[0.2em]"
+                className="group inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full text-foreground text-xs uppercase tracking-[0.2em]"
               >
                 See the work
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 to="/contact"
-                className="px-6 py-3 border border-foreground/60 rounded-full text-xs uppercase tracking-[0.2em]"
+                className="px-6 py-3 border border-white/70 rounded-full text-white text-xs uppercase tracking-[0.2em] hover:bg-white/10 transition-colors"
               >
                 Start a project
               </Link>
@@ -238,16 +238,16 @@ function HomePage() {
         <img
           src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=2400&q=85"
           alt=""
-          className="absolute inset-0 opacity-40 w-full h-full object-cover"
+          className="absolute inset-0 opacity-50 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/80" />
         <div className="relative mx-auto px-6 md:px-10 py-32 md:py-48 max-w-[110rem] text-center">
-          <h2 className="mx-auto max-w-[16ch] font-display text-6xl md:text-9xl leading-[1]">
+          <h2 className="mx-auto max-w-[16ch] font-display text-6xl md:text-9xl leading-[1] text-white">
             Let's make something <span className="text-accent italic">unforgettable</span>.
           </h2>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-3 bg-foreground mt-12 px-8 py-4 rounded-full text-primary-foreground text-xs uppercase tracking-[0.25em]"
+            className="inline-flex items-center gap-3 bg-white mt-12 px-8 py-4 rounded-full text-foreground text-xs uppercase tracking-[0.25em] hover:bg-accent hover:text-white transition-colors"
           >
             Start a project <ArrowRight className="w-4 h-4" />
           </Link>

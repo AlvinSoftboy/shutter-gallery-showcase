@@ -56,7 +56,7 @@ export function SiteNav() {
               }}
               activeProps={{
                 className:
-                  "relative text-white font-semibold after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-accent",
+                  "relative text-foreground font-semibold after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-accent",
               }}
               className="text-muted-foreground hover:text-foreground text-sm uppercase tracking-[0.18em] transition-colors"
             >

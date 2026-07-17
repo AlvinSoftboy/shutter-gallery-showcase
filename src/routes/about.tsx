@@ -29,7 +29,7 @@ function AboutPage() {
           </h1>
         </div>
         <div className="self-end">
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p className="text-foreground/80 text-lg leading-relaxed">
             I started with a borrowed film camera in 2013 and haven't put one down since. Twelve
             years and forty-three countries later, I run a small studio between Jakarta, Reykjavík,
             and Tokyo — telling visual stories for people who take craft seriously.
@@ -50,7 +50,7 @@ function AboutPage() {
           <p className="font-mono text-accent text-xs uppercase tracking-[0.3em]">Approach</p>
           <h2 className="mt-4 font-display text-5xl">Cinematic. Considered. Fast.</h2>
         </div>
-        <div className="space-y-8 text-muted-foreground text-lg leading-relaxed">
+        <div className="space-y-8 text-foreground/80 text-lg leading-relaxed">
           <p>
             My work sits at the intersection of documentary and advertising — real moments shaped by
             intentional light. I direct my own shoots and edit every frame that leaves the studio.
