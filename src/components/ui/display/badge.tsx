@@ -5,8 +5,7 @@ import { cn } from "@/lib/utils";
 import { badgeVariants } from "./badge-variants";
 
 export interface BadgeProps
-  extends Readonly<React.HTMLAttributes<HTMLDivElement>>,
-    VariantProps<typeof badgeVariants> {}
+  extends Readonly<React.HTMLAttributes<HTMLDivElement>>, VariantProps<typeof badgeVariants> {}
 
 function Badge({ className, variant, ...props }: Readonly<BadgeProps>) {
   return <div className={cn(badgeVariants({ variant }), className)} {...props} />;

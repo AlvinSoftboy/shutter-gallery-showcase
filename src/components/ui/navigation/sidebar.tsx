@@ -2,6 +2,7 @@ import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { PanelLeft } from "lucide-react";
+export { useSidebar } from "./use-sidebar";
 
 import { SidebarContext, useSidebar } from "./use-sidebar";
 import type { SidebarContextProps } from "./use-sidebar";
@@ -32,7 +33,6 @@ const SIDEBAR_WIDTH = "16rem";
 const SIDEBAR_WIDTH_MOBILE = "18rem";
 const SIDEBAR_WIDTH_ICON = "3rem";
 const SIDEBAR_KEYBOARD_SHORTCUT = "b";
-
 
 const SidebarProvider = React.forwardRef<
   HTMLDivElement,
@@ -729,4 +729,3 @@ export {
   SidebarSeparator,
   SidebarTrigger,
 };
-export { useSidebar } from "./use-sidebar";
