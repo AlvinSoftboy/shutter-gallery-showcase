@@ -1,5 +1,16 @@
 export type Category = "landscape" | "portrait" | "commercial" | "wedding";
 
+export type JournalPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+  image: string;
+  body: string;
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -177,24 +188,89 @@ export const JOURNAL_POSTS = [
     title: "Chasing Blue Hour in the Arctic",
     excerpt: "Notes from ten days above the arctic circle with a single lens.",
     date: "Jun 12, 2025",
+    readTime: "8 min read",
+    tags: ["Landscape", "Travel", "Gear"],
     image:
       "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&q=80",
+    body: `Blue hour in the Arctic doesn't last long — maybe twenty minutes on a good day, ten on a cloudy one. You learn to be ready before the light arrives, or you miss it entirely.
+
+I spent ten days above the arctic circle in Lofoten with a single lens: the Sony 16-35 GM. No zoom safety net. No switching between focal lengths when the moment arrives. Just one perspective, one discipline.
+
+The decision forced something useful. Instead of reacting to the scene, I had to anticipate it — reading the terrain, pre-visualising the frame, committing to a position before the colour even appeared in the sky.
+
+**What I learned**
+
+The best frames came when I stopped hunting and started waiting. I'd identify a composition in daylight, return at dusk, and simply hold still. The mountains didn't move. The water didn't move. Only the light changed, and my job was to not miss it.
+
+Cold weather affects batteries faster than any spec sheet admits. I was rotating three Sony NP-FZ100 packs and still lost one shoot to a dead body. Now I keep one inside my jacket at all times below freezing.
+
+**On shooting with one lens**
+
+The 16-35 GM is sharp edge to edge at f/8, fast enough at f/2.8 for stars, and wide enough to make fjords feel as enormous as they are. But wide glass punishes sloppy horizons — tilt the camera even slightly and the lines curve noticeably. It made me slower. More deliberate. Better.
+
+If you're planning a trip like this: don't. Just go. The planning becomes a reason not to leave.`,
   },
   {
     slug: "one-light-portraits",
     title: "The Case for One-Light Portraits",
     excerpt: "Why constraint is the fastest path to a signature look.",
     date: "May 04, 2025",
+    readTime: "6 min read",
+    tags: ["Portrait", "Lighting", "Technique"],
     image:
       "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?auto=format&fit=crop&w=1200&q=80",
+    body: `Every photographer I admire has a recognisable quality of light. Not a preset, not a colour grade — light. The way shadows fall, the way highlights bloom, the quality of the transition between the two.
+
+Most of them got there by working with less, not more.
+
+I run single-light portraits almost exclusively now. One Profoto B10, one large octobox, sometimes a reflector if the location demands it. That's the kit. The constraint has become the look.
+
+**Why one light works**
+
+Multiple lights give you control. One light gives you character. When you're balancing three sources, you're solving a technical problem. When you're working with one, you're making aesthetic decisions — where does the shadow fall? How deep is it? Does it serve the face or fight it?
+
+The answers compound into a style.
+
+**The setup I come back to**
+
+Large octobox, camera left, slightly above eye level, angled down at roughly 30 degrees. Subject 1.5 metres from the light. That's it. From there, I move the subject relative to the source — closer for softer light, further for more contrast — and read the shadow on the far cheek.
+
+When that shadow is clean and the catch light is sharp, I shoot.
+
+**On working with people**
+
+One light means fewer assistants, less setup time, and a smaller physical footprint in the room. People relax faster when there isn't a crew reconfiguring equipment around them. Some of my quietest, most honest portraits came from sessions that looked, from the outside, barely like shoots at all.`,
   },
   {
     slug: "camera-doesnt-matter",
     title: "Your Camera Doesn't Matter (Until It Does)",
     excerpt: "A working photographer's take on gear, honestly.",
     date: "Apr 18, 2025",
+    readTime: "5 min read",
+    tags: ["Gear", "Opinion", "Business"],
     image:
       "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1200&q=80",
+    body: `I've shot campaigns with a Phase One IQ4 and personal work on a Ricoh GR IIIx. Both sold. Both got compliments. One cost forty times the other.
+
+The internet has decided that gear doesn't matter. I think that's mostly right and occasionally wrong, and the difference is worth understanding.
+
+**Where gear doesn't matter**
+
+At the level most photographers operate — clients, editorial, portraits, events — any modern mirrorless camera with a decent prime lens is technically sufficient. The sensor resolves more than the output requires. The autofocus is fast enough. The dynamic range is wide enough.
+
+If your images aren't working, the camera is not the problem.
+
+**Where gear does matter**
+
+Large-format advertising. Billboard-scale print. Catalogue work requiring extreme cropping latitude. These use cases exist, they pay well, and they genuinely require medium format or high-resolution full-frame bodies.
+
+More practically: ergonomics matter for long shoots. Weather sealing matters in harsh conditions. Battery life matters when you can't stop. These aren't aesthetic upgrades — they're operational ones.
+
+**The honest answer**
+
+Buy the best lens you can afford, then forget about gear for two years. Shoot constantly. The equipment conversation is mostly a way to avoid the harder conversation about whether the work is good.
+
+When the work is good, the equipment conversation becomes genuinely interesting — because you'll have specific problems to solve, not theoretical ones.`,
   },
 ];
 

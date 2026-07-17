@@ -9,7 +9,7 @@ export const Route = createFileRoute("/contact")({
       { title: "Contact — Barnes Sagala" },
       {
         name: "description",
-        content: "Start a project, request a quote, or say hello. Kai Winters photography studio.",
+        content: "Start a project, request a quote, or say hello.Barnes Sagala photography studio.",
       },
       { property: "og:title", content: "Contact — Barnes Sagala" },
       { property: "og:url", content: "/contact" },
@@ -64,7 +64,7 @@ function ContactPage() {
         }}
         className="flex flex-col gap-6 bg-surface p-8 md:p-12 border border-border"
       >
-        <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-[0.3em]">
+        <p className="font-semi-bold font-mono text-[12px] text-muted-foreground text-center uppercase tracking-[0.3em]">
           Project inquiry
         </p>
         <Field label="Your name" name="name" />
