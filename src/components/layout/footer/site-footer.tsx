@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { InstagramIcon, YoutubeIcon, XIcon } from "@/components/ui/display/brand-icons";
+import { InstagramIcon, XIcon } from "@/components/ui/display/brand-icons";
 
 export function SiteFooter() {
   return (
@@ -88,7 +88,7 @@ export function SiteFooter() {
         </div>
 
         <div className="flex md:flex-row flex-col justify-between items-start md:items-center gap-4 mt-16 pt-8 border-border border-t text-muted-foreground text-xs uppercase tracking-[0.2em]">
-          <p>© {new Date().getFullYear()} Barnes Sagala</p>
+          <p>©{new Date().getFullYear()} Barnes Sagala</p>
           <p>Made with heart in Jakarta</p>
         </div>
       </div>

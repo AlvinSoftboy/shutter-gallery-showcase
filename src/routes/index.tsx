@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
         content:
           "Cinematic photography for global brands, editorials, and personal stories. Based between Jakarta, Reykjavík, and Tokyo.",
       },
-      { property: "og:title", content: "Kai Winters — Photographer & Director" },
+      { property: "og:title", content: "Barnes Sagala — Photographer & Director" },
       {
         property: "og:description",
         content: "Cinematic photography for global brands, editorials, and personal stories.",
@@ -30,7 +30,7 @@ function HomePage() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative -mt-20 w-full h-[100svh] overflow-hidden">
+      <section className="relative -mt-20 w-full h-svh overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2400&q=85"
           alt="Winter fjord at blue hour"
@@ -43,7 +43,7 @@ function HomePage() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="font-mono text-accent text-xs uppercase tracking-[0.3em]"
+            className="font-mono text-yellow text-xs uppercase tracking-[0.3em]"
           >
             Portfolio · 2018 — 2026
           </motion.p>
@@ -51,7 +51,7 @@ function HomePage() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1 }}
-            className="mt-6 max-w-[18ch] font-display text-[13vw] md:text-[9vw] leading-[0.95] tracking-tight text-white"
+            className="mt-6 max-w-[18ch] font-display text-[13vw] text-white md:text-[9vw] leading-[0.95] tracking-tight"
           >
             Light is a <span className="text-accent italic">language</span>.
           </motion.h1>
@@ -62,8 +62,8 @@ function HomePage() {
             className="flex md:flex-row flex-col justify-between items-start md:items-end gap-6 mt-8"
           >
             <p className="max-w-md text-white/80 text-base md:text-lg">
-              I'm Kai — a photographer and director making cinematic images for brands, editorials,
-              and the people brave enough to stand in front of a lens.
+              I'm Barnes Sagala — a photographer and director making cinematic images for brands,
+              editorials, and the people brave enough to stand in front of a lens.
             </p>
             <div className="flex items-center gap-3">
               <Link
@@ -75,7 +75,7 @@ function HomePage() {
               </Link>
               <Link
                 to="/contact"
-                className="px-6 py-3 border border-white/70 rounded-full text-white text-xs uppercase tracking-[0.2em] hover:bg-white/10 transition-colors"
+                className="hover:bg-white/10 px-6 py-3 border border-white/70 rounded-full text-white text-xs uppercase tracking-[0.2em] transition-colors"
               >
                 Start a project
               </Link>
@@ -135,9 +135,9 @@ function HomePage() {
                 <img
                   src={p.cover}
                   alt={p.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1200 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-linear-to-t from-background/80 via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity" />
                 <div className="bottom-0 absolute inset-x-0 flex justify-between items-end p-6">
                   <div>
                     <p className="font-mono text-[10px] text-accent uppercase tracking-[0.3em]">
@@ -156,7 +156,7 @@ function HomePage() {
       {/* ABOUT TEASER */}
       <section className="bg-surface border-border border-y">
         <div className="gap-16 grid md:grid-cols-2 mx-auto px-6 md:px-10 py-24 md:py-32 max-w-[110rem]">
-          <div className="relative aspect-[4/5] overflow-hidden">
+          <div className="relative aspect-4/5 overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1400&q=85"
               alt="Photographer portrait"
@@ -216,7 +216,7 @@ function HomePage() {
         <div className="gap-10 grid md:grid-cols-3 mt-16">
           {JOURNAL_POSTS.map((p) => (
             <article key={p.slug} className="group">
-              <div className="bg-surface aspect-[4/3] overflow-hidden">
+              <div className="bg-surface aspect-4/3 overflow-hidden">
                 <img
                   src={p.image}
                   alt={p.title}
@@ -240,14 +240,14 @@ function HomePage() {
           alt=""
           className="absolute inset-0 opacity-50 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/80" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/50 to-black/80" />
         <div className="relative mx-auto px-6 md:px-10 py-32 md:py-48 max-w-[110rem] text-center">
-          <h2 className="mx-auto max-w-[16ch] font-display text-6xl md:text-9xl leading-[1] text-white">
+          <h2 className="mx-auto max-w-[16ch] font-display text-white text-6xl md:text-9xl leading-none">
             Let's make something <span className="text-accent italic">unforgettable</span>.
           </h2>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-3 bg-white mt-12 px-8 py-4 rounded-full text-foreground text-xs uppercase tracking-[0.25em] hover:bg-accent hover:text-white transition-colors"
+            className="inline-flex items-center gap-3 bg-white hover:bg-accent mt-12 px-8 py-4 rounded-full text-foreground hover:text-white text-xs uppercase tracking-[0.25em] transition-colors"
           >
             Start a project <ArrowRight className="w-4 h-4" />
           </Link>

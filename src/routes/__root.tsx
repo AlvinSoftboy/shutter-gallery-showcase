@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Kai Winters — Photographer & Director" },
+      { title: "Barnes Sagala — Photographer & Director" },
       {
         name: "description",
         content:
-          "Portfolio of Kai Winters — commercial, editorial, and landscape photographer working worldwide.",
+          "Portfolio of Barnes Sagala — commercial, editorial, and landscape photographer working worldwide.",
       },
-      { name: "author", content: "Kai Winters" },
-      { property: "og:site_name", content: "Kai Winters Studio" },
+      { name: "author", content: "Barnes Sagala" },
+      { property: "og:site_name", content: "Barnes Sagala Studio" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

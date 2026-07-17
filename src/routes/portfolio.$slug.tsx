@@ -12,7 +12,7 @@ export const Route = createFileRoute("/portfolio/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Project not found — Kai Winters" },
+          { title: "Project not found — Barnes Sagala" },
           { name: "robots", content: "noindex" },
         ],
       };
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/portfolio/$slug")({
     const { project } = loaderData;
     return {
       meta: [
-        { title: `${project.title} — Kai Winters` },
+        { title: `${project.title} — Barnes Sagala` },
         { name: "description", content: project.description },
         { property: "og:title", content: project.title },
         { property: "og:description", content: project.description },
@@ -53,13 +53,13 @@ function ProjectPage() {
   return (
     <article>
       {/* Cover */}
-      <div className="relative -mt-20 w-full h-[100svh] overflow-hidden">
+      <div className="relative -mt-20 w-full h-svh overflow-hidden">
         <img
           src={project.cover}
           alt={project.title}
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background" />
+        <div className="absolute inset-0 bg-linear-to-b from-background/30 via-transparent to-background" />
         <div className="z-10 relative flex flex-col justify-end mx-auto px-6 md:px-10 pb-16 md:pb-24 max-w-[110rem] h-full">
           <Link
             to="/portfolio"
@@ -104,7 +104,7 @@ function ProjectPage() {
           <div
             key={src}
             className={`overflow-hidden bg-surface ${
-              i % 3 === 0 ? "aspect-[16/9]" : "aspect-[4/5] md:mx-auto md:w-3/4"
+              i % 3 === 0 ? "aspect-video" : "aspect-4/5 md:mx-auto md:w-3/4"
             }`}
           >
             <img

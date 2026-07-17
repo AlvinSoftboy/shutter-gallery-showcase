@@ -10,7 +10,7 @@ export const Route = createFileRoute("/store")({
         name: "description",
         content: "Signature presets, cinematic LUTs, ebooks, and masterclasses from Kai Winters.",
       },
-      { property: "og:title", content: "Store — Kai Winters" },
+      { property: "og:title", content: "Store — Barnes Sagala" },
       { property: "og:url", content: "/store" },
     ],
     links: [{ rel: "canonical", href: "/store" }],
@@ -41,7 +41,7 @@ function StorePage() {
               <img
                 src={item.image}
                 alt={item.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1200ms]"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1200"
               />
               <span className="top-4 left-4 absolute bg-background/80 backdrop-blur px-3 py-1 rounded-full font-mono text-[10px] uppercase tracking-[0.3em]">
                 {item.tag}

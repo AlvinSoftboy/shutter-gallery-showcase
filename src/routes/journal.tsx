@@ -5,13 +5,13 @@ import { JOURNAL_POSTS } from "@/lib/site/site-data";
 export const Route = createFileRoute("/journal")({
   head: () => ({
     meta: [
-      { title: "Journal — Kai Winters" },
+      { title: "Journal — Barnes Sagala" },
       {
         name: "description",
         content:
           "Behind-the-scenes essays, gear notes, and honest thoughts on the craft of photography.",
       },
-      { property: "og:title", content: "Journal — Kai Winters" },
+      { property: "og:title", content: "Journal — Barnes Sagala" },
       { property: "og:url", content: "/journal" },
     ],
     links: [{ rel: "canonical", href: "/journal" }],
@@ -30,11 +30,11 @@ function JournalPage() {
       <div className="mt-20 divide-y divide-border">
         {JOURNAL_POSTS.map((p) => (
           <article key={p.slug} className="group gap-8 md:gap-16 grid md:grid-cols-[1fr_2fr] py-10">
-            <div className="bg-surface aspect-[4/3] overflow-hidden">
+            <div className="bg-surface aspect-4/3 overflow-hidden">
               <img
                 src={p.image}
                 alt={p.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1200ms]"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1200"
               />
             </div>
             <div className="flex flex-col justify-center">

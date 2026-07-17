@@ -7,13 +7,13 @@ import { ProjectDetailModal } from "@/components/portfolio/project-detail-modal"
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Work — Kai Winters" },
+      { title: "Work — Barnes Sagala" },
       {
         name: "description",
         content:
           "Selected photography projects across landscape, portrait, commercial, and wedding assignments.",
       },
-      { property: "og:title", content: "Work — Kai Winters" },
+      { property: "og:title", content: "Work — Barnes Sagala" },
       { property: "og:url", content: "/portfolio" },
     ],
     links: [{ rel: "canonical", href: "/portfolio" }],

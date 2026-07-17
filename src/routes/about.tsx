@@ -4,13 +4,13 @@ import { PRESSED_LOGOS } from "@/lib/site/site-data";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Kai Winters" },
+      { title: "About — Barnes Sagala" },
       {
         name: "description",
         content:
           "Photographer and director Kai Winters — a decade of cinematic image-making for brands, editors, and personal commissions.",
       },
-      { property: "og:title", content: "About — Kai Winters" },
+      { property: "og:title", content: "About — Barnes Sagala" },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
@@ -40,7 +40,7 @@ function AboutPage() {
       <section className="relative w-full h-[80vh] overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=2400&q=85"
-          alt="Kai Winters at work"
+          alt="Barnes Sagala work"
           className="w-full h-full object-cover"
         />
       </section>

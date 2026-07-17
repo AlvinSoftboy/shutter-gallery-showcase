@@ -6,12 +6,12 @@ import { InstagramIcon } from "@/components/ui/display/brand-icons";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Kai Winters" },
+      { title: "Contact — Barnes Sagala" },
       {
         name: "description",
         content: "Start a project, request a quote, or say hello. Kai Winters photography studio.",
       },
-      { property: "og:title", content: "Contact — Kai Winters" },
+      { property: "og:title", content: "Contact — Barnes Sagala" },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
