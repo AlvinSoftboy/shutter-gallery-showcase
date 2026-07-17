@@ -43,16 +43,16 @@ function JournalPage() {
                 type="button"
                 onClick={() => setSelected(p)}
                 aria-label={`Read ${p.title}`}
-                className="relative bg-surface aspect-[4/3] overflow-hidden text-left"
+                className="relative bg-surface aspect-4/3 overflow-hidden text-left"
               >
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1200ms]"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1200"
                 />
                 {/* hover hint */}
-                <div className="absolute inset-0 flex items-center justify-center bg-foreground/0 group-hover:bg-foreground/10 transition-colors duration-300">
-                  <span className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-background/90 backdrop-blur px-4 py-2 rounded-full font-mono text-[10px] uppercase tracking-[0.25em]">
+                <div className="absolute inset-0 flex justify-center items-center bg-foreground/0 group-hover:bg-foreground/10 transition-colors duration-300">
+                  <span className="bg-background/90 opacity-0 group-hover:opacity-100 backdrop-blur px-4 py-2 rounded-full font-mono text-[10px] uppercase tracking-[0.25em] transition-all translate-y-2 group-hover:translate-y-0 duration-300">
                     Read entry
                   </span>
                 </div>
