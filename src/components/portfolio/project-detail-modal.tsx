@@ -107,11 +107,11 @@ export function ProjectDetailModal({ project, onClose }: Readonly<ProjectDetailM
                 />
               </AnimatePresence>
 
-              {/* Image counter */}
+              {/* Image counter dots */}
               <div className="bottom-4 left-4 absolute flex items-center gap-2">
-                {project.images.map((_, i) => (
+                {project.images.map((src, i) => (
                   <button
-                    key={i}
+                    key={src}
                     type="button"
                     onClick={() => setActiveImage(i)}
                     aria-label={`View photo ${i + 1}`}
@@ -219,7 +219,7 @@ export function ProjectDetailModal({ project, onClose }: Readonly<ProjectDetailM
                   <div className="flex gap-2">
                     {project.images.map((src, i) => (
                       <button
-                        key={i}
+                        key={src}
                         type="button"
                         onClick={() => setActiveImage(i)}
                         aria-label={`View photo ${i + 1}`}

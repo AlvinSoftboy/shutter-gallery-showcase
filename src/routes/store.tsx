@@ -5,10 +5,10 @@ import { STORE_ITEMS } from "@/lib/site/site-data";
 export const Route = createFileRoute("/store")({
   head: () => ({
     meta: [
-      { title: "Store — Presets, LUTs & Courses | Kai Winters" },
+      { title: "Store — Presets, LUTs & Courses | Barnes Sagala" },
       {
         name: "description",
-        content: "Signature presets, cinematic LUTs, ebooks, and masterclasses from Kai Winters.",
+        content: "Signature presets, cinematic LUTs, ebooks, and masterclasses from Barnes Sagala.",
       },
       { property: "og:title", content: "Store — Barnes Sagala" },
       { property: "og:url", content: "/store" },

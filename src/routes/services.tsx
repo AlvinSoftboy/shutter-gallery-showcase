@@ -5,13 +5,13 @@ import { SERVICES } from "@/lib/site/site-data";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services & Booking — Kai Winters" },
+      { title: "Services & Booking — Barnes Sagala" },
       {
         name: "description",
         content:
           "Commercial, editorial, portrait, and wedding photography packages. Available worldwide.",
       },
-      { property: "og:title", content: "Services & Booking — Kai Winters" },
+      { property: "og:title", content: "Services & Booking — Barnes Sagala" },
       { property: "og:url", content: "/services" },
     ],
     links: [{ rel: "canonical", href: "/services" }],

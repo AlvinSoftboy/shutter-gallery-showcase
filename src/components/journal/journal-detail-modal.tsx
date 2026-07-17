@@ -21,13 +21,19 @@ function BodyRenderer({ body }: Readonly<{ body: string }>) {
 
   return (
     <div className="space-y-4">
-      {paragraphs.map((para, i) => {
+      {paragraphs.map((para) => {
         const trimmed = para.trim();
+        // Use first 40 chars as a stable key — paragraphs are unique within one post
+        const paraKey = trimmed.slice(0, 40);
 
         // Section heading: **text**
-        if (trimmed.startsWith("**") && trimmed.endsWith("**") && !trimmed.slice(2, -2).includes("**")) {
+        if (
+          trimmed.startsWith("**") &&
+          trimmed.endsWith("**") &&
+          !trimmed.slice(2, -2).includes("**")
+        ) {
           return (
-            <h3 key={i} className="mt-6 font-display text-xl leading-snug">
+            <h3 key={paraKey} className="mt-6 font-display text-xl leading-snug">
               {trimmed.slice(2, -2)}
             </h3>
           );
@@ -36,13 +42,14 @@ function BodyRenderer({ body }: Readonly<{ body: string }>) {
         // Normal paragraph — handle inline **bold**
         const parts = trimmed.split(/(\*\*[^*]+\*\*)/g);
         return (
-          <p key={i} className="text-foreground/80 text-sm leading-relaxed">
-            {parts.map((part, j) =>
+          <p key={paraKey} className="text-foreground/80 text-sm leading-relaxed">
+            {parts.map((part) =>
               part.startsWith("**") && part.endsWith("**") ? (
-                <strong key={j} className="font-semibold text-foreground">
+                <strong key={part} className="font-semibold text-foreground">
                   {part.slice(2, -2)}
                 </strong>
               ) : (
+                // plain text nodes don't need a key — React handles them fine as string
                 part
               ),
             )}
@@ -97,10 +104,10 @@ export function JournalDetailModal({ post, onClose }: Readonly<JournalDetailModa
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="z-50 fixed inset-x-4 md:inset-x-8 top-[4vh] bottom-[4vh] mx-auto max-w-5xl bg-background border border-border shadow-2xl rounded-lg overflow-hidden flex flex-col"
+            className="top-[4vh] bottom-[4vh] z-50 fixed inset-x-4 md:inset-x-8 flex flex-col bg-background shadow-2xl mx-auto border border-border rounded-lg max-w-5xl overflow-hidden"
           >
             {/* ── Hero image + close button ── */}
-            <div className="relative w-full h-48 md:h-64 shrink-0 overflow-hidden bg-surface">
+            <div className="relative bg-surface w-full h-48 md:h-64 overflow-hidden shrink-0">
               <motion.img
                 initial={{ scale: 1.06 }}
                 animate={{ scale: 1 }}
@@ -110,7 +117,7 @@ export function JournalDetailModal({ post, onClose }: Readonly<JournalDetailModa
                 className="absolute inset-0 w-full h-full object-cover"
               />
               {/* gradient overlay for readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-background/80 via-background/20 to-transparent" />
 
               {/* Close */}
               <button
@@ -127,27 +134,27 @@ export function JournalDetailModal({ post, onClose }: Readonly<JournalDetailModa
                 <p className="font-mono text-[10px] text-accent uppercase tracking-[0.3em]">
                   Journal
                 </p>
-                <h2 className="mt-1 font-display text-2xl md:text-4xl leading-tight text-foreground">
+                <h2 className="mt-1 font-display text-foreground text-2xl md:text-4xl leading-tight">
                   {post.title}
                 </h2>
               </div>
             </div>
 
             {/* ── Body scroll area ── */}
-            <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
+            <div className="flex md:flex-row flex-col flex-1 overflow-hidden">
               {/* Article body */}
-              <div className="flex-1 overflow-y-auto px-6 md:px-8 py-6">
-                <p className="mb-6 text-muted-foreground text-base leading-relaxed border-b border-border pb-6">
+              <div className="flex-1 px-6 md:px-8 py-6 overflow-y-auto">
+                <p className="mb-6 pb-6 border-border border-b text-muted-foreground text-base leading-relaxed">
                   {post.excerpt}
                 </p>
                 <BodyRenderer body={post.body} />
               </div>
 
               {/* Sidebar meta */}
-              <aside className="md:w-56 shrink-0 border-t md:border-t-0 md:border-l border-border px-6 py-6 flex flex-col gap-6">
+              <aside className="flex flex-col gap-6 px-6 py-6 border-border border-t md:border-t-0 md:border-l md:w-56 shrink-0">
                 {/* Date */}
                 <div>
-                  <p className="flex items-center gap-2 font-mono text-[10px] text-muted-foreground uppercase tracking-[0.3em] mb-2">
+                  <p className="flex items-center gap-2 mb-2 font-mono text-[10px] text-muted-foreground uppercase tracking-[0.3em]">
                     <Calendar className="w-3.5 h-3.5" />
                     Published
                   </p>
@@ -156,7 +163,7 @@ export function JournalDetailModal({ post, onClose }: Readonly<JournalDetailModa
 
                 {/* Read time */}
                 <div>
-                  <p className="flex items-center gap-2 font-mono text-[10px] text-muted-foreground uppercase tracking-[0.3em] mb-2">
+                  <p className="flex items-center gap-2 mb-2 font-mono text-[10px] text-muted-foreground uppercase tracking-[0.3em]">
                     <Clock className="w-3.5 h-3.5" />
                     Read time
                   </p>
@@ -165,7 +172,7 @@ export function JournalDetailModal({ post, onClose }: Readonly<JournalDetailModa
 
                 {/* Tags */}
                 <div>
-                  <p className="flex items-center gap-2 font-mono text-[10px] text-muted-foreground uppercase tracking-[0.3em] mb-3">
+                  <p className="flex items-center gap-2 mb-3 font-mono text-[10px] text-muted-foreground uppercase tracking-[0.3em]">
                     <Tag className="w-3.5 h-3.5" />
                     Topics
                   </p>
@@ -174,7 +181,7 @@ export function JournalDetailModal({ post, onClose }: Readonly<JournalDetailModa
                       <span
                         key={tag}
                         className={cn(
-                          "px-2.5 py-1 rounded-full border border-border font-mono text-[10px] uppercase tracking-[0.2em]",
+                          "px-2.5 py-1 border border-border rounded-full font-mono text-[10px] uppercase tracking-[0.2em]",
                           "text-muted-foreground",
                         )}
                       >
@@ -185,14 +192,14 @@ export function JournalDetailModal({ post, onClose }: Readonly<JournalDetailModa
                 </div>
 
                 {/* Divider + CTA */}
-                <div className="mt-auto pt-6 border-t border-border space-y-3">
+                <div className="space-y-3 mt-auto pt-6 border-border border-t">
                   <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-[0.2em]">
                     Enjoyed this?
                   </p>
                   <Link
                     to="/contact"
                     onClick={onClose}
-                    className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] hover:text-accent transition-colors"
+                    className="inline-flex items-center gap-2 hover:text-accent text-xs uppercase tracking-[0.2em] transition-colors"
                   >
                     Work with me <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
