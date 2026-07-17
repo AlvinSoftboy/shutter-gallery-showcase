@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { PROJECTS } from "@/lib/site-data";
+import { PROJECTS } from "@/lib/site/site-data";
 
 export const Route = createFileRoute("/portfolio/$slug")({
   loader: ({ params }) => {

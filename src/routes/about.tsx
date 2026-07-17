@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PRESSED_LOGOS } from "@/lib/site-data";
+import { PRESSED_LOGOS } from "@/lib/site/site-data";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
-import { PROJECTS, PRESSED_LOGOS, JOURNAL_POSTS } from "@/lib/site-data";
+import { PROJECTS, PRESSED_LOGOS, JOURNAL_POSTS } from "@/lib/site/site-data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Kai Winters — Photographer & Director" },
+      { title: "Barnes Sagala — Photographer for Fun" },
       {
         name: "description",
         content:
@@ -36,7 +36,7 @@ function HomePage() {
           alt="Winter fjord at blue hour"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background" />
+        <div className="absolute inset-0 bg-linear-to-b from-background/40 via-background/30 to-background" />
 
         <div className="z-10 relative flex flex-col justify-end mx-auto px-6 md:px-10 pb-16 md:pb-24 max-w-[110rem] h-full">
           <motion.p

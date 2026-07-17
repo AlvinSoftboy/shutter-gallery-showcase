@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
-import { SERVICES } from "@/lib/site-data";
+import { SERVICES } from "@/lib/site/site-data";
 
 export const Route = createFileRoute("/services")({
   head: () => ({

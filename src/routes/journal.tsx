@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
-import { JOURNAL_POSTS } from "@/lib/site-data";
+import { JOURNAL_POSTS } from "@/lib/site/site-data";
 
 export const Route = createFileRoute("/journal")({
   head: () => ({

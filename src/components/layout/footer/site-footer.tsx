@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Youtube, Twitter   } from "lucide-react";
+import { Instagram, Youtube, Twitter } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -8,11 +8,10 @@ export function SiteFooter() {
         <div className="gap-12 grid md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <p className="font-display text-4xl leading-none tracking-tight">
-              Kai <span className="text-accent italic">Winters</span>
+              Barnes <span className="text-accent italic">Sagala</span>
             </p>
             <p className="mt-4 max-w-sm text-muted-foreground text-sm">
-              Photographer & director. Available worldwide for commercial, editorial, and personal
-              commissions.
+              Photographer. Available worldwide for commercial, editorial, and personal commissions.
             </p>
             <form
               onSubmit={(e) => e.preventDefault()}
@@ -93,8 +92,8 @@ export function SiteFooter() {
         </div>
 
         <div className="flex md:flex-row flex-col justify-between items-start md:items-center gap-4 mt-16 pt-8 border-border border-t text-muted-foreground text-xs uppercase tracking-[0.2em]">
-          <p>© {new Date().getFullYear()} Kai Winters Studio</p>
-          <p>Made with light in Jakarta · Reykjavík · Tokyo</p>
+          <p>© {new Date().getFullYear()} Barnes Sagala</p>
+          <p>Made with heart in Jakarta</p>
         </div>
       </div>
     </footer>

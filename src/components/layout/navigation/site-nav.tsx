@@ -16,71 +16,95 @@ export function SiteNav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+    };
+
     onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    window.addEventListener("scroll", onScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "backdrop-blur-xl bg-background/70 border-b border-border/60" : "bg-transparent"
+        scrolled ? "border-border/60 border-b bg-background/70 backdrop-blur-xl" : "bg-transparent"
       }`}
     >
       <div className="flex justify-between items-center mx-auto px-6 md:px-10 py-4 max-w-[110rem]">
+        {/* Logo */}
         <Link to="/" className="group flex items-center gap-2">
           <span className="font-display text-2xl leading-none tracking-tight">
-            Kai <span className="text-accent italic">Winters</span>
+            Barnes <span className="text-accent italic">Sagala</span>
           </span>
         </Link>
 
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          {LINKS.map((l) => (
+          {LINKS.map((link) => (
             <Link
-              key={l.to}
-              to={l.to}
-              activeProps={{ className: "text-accent" }}
+              key={link.to}
+              to={link.to}
+              activeOptions={{
+                exact: false,
+              }}
+              activeProps={{
+                className:
+                  "relative text-white font-semibold after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-accent",
+              }}
               className="text-muted-foreground hover:text-foreground text-sm uppercase tracking-[0.18em] transition-colors"
             >
-              {l.label}
+              {link.label}
             </Link>
           ))}
         </nav>
 
+        {/* Desktop CTA */}
         <Link
           to="/contact"
           className="hidden md:inline-flex hover:bg-foreground px-5 py-2 border border-foreground/80 rounded-full hover:text-primary-foreground text-xs uppercase tracking-[0.2em] transition-colors"
         >
-          Book a shoot
+          Book a Shoot
         </Link>
 
         <button
           type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
+          onClick={() => setOpen((prev) => !prev)}
+          aria-label="Toggle Menu"
           className="md:hidden"
         >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {open ? (
+      {open && (
         <div className="md:hidden bg-background border-border border-t">
           <nav className="flex flex-col px-6 py-4">
-            {LINKS.map((l) => (
+            {LINKS.map((link) => (
               <Link
-                key={l.to}
-                to={l.to}
+                key={link.to}
+                to={link.to}
                 onClick={() => setOpen(false)}
-                className="py-3 text-muted-foreground text-sm uppercase tracking-[0.18em]"
+                activeOptions={{
+                  exact: false,
+                }}
+                activeProps={{
+                  className: "py-3 text-accent font-semibold uppercase tracking-[0.18em]",
+                }}
+                className="py-3 text-muted-foreground text-sm uppercase tracking-[0.18em] transition-colors"
               >
-                {l.label}
+                {link.label}
               </Link>
             ))}
           </nav>
         </div>
-      ) : null}
+      )}
     </header>
   );
 }
