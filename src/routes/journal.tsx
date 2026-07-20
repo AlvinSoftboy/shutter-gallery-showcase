@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { JOURNAL_POSTS, type JournalPost } from "@/lib/site/site-data";
-import { JournalDetailModal } from "@/components/journal/journal-detail-modal";
+import { JournalDetailModal } from "@/features/journal";
 
 export const Route = createFileRoute("/journal")({
   head: () => ({

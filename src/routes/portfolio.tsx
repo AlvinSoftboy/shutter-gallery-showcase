@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { PROJECTS, CATEGORIES, type Category, type Project } from "@/lib/site/site-data";
-import { ProjectDetailModal } from "@/components/portfolio/project-detail-modal";
+import { ProjectDetailModal } from "@/features/portfolio";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({

@@ -11,8 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/error/lovable-error-reporting";
-import { SiteNav } from "../components/layout/navigation/site-nav";
-import { SiteFooter } from "../components/layout/footer/site-footer";
+import { SiteNav, SiteFooter } from "@/app/layouts";
 
 function NotFoundComponent() {
   return (
