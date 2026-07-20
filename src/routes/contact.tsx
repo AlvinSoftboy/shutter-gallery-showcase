@@ -37,13 +37,14 @@ function ContactPage() {
         <div className="space-y-4 mt-12 pt-8 border-border border-t">
           <a
             href="mailto:barnessagala17@gmail.com"
+            target="_blank"
             className="flex items-center gap-3 hover:text-accent"
           >
             <Mail className="w-4 h-4 text-accent" />
             <span>barnessagala17@gmail.com</span>
           </a>
           <a
-            href="barnessagala17@gmail.com"
+            href="https://www.instagram.com/barnessagala/"
             target="_blank"
             className="flex items-center gap-3 hover:text-accent"
           >
